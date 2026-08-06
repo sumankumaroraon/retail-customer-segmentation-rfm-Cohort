@@ -42,6 +42,7 @@ The pipeline runs as a single script (`customer_segmentation_analysis.py`), stru
 ## Key Visuals
 ![Revenue by Country](outputs/figures/revenue_by_country.png)
 ![Monthly Revenue Trend](outputs/figures/monthly_revenue_trend.png)
+![Total Revenue by RFM Segment](outputs/figures/rfm_segment_revenue.png)
 ![Cohort Retention Heatmap](outputs/figures/cohort_retention_heatmap.png)
 ![Tenure vs Frequency by Segment](outputs/figures/tenure_frequency_by_segment.png)
 
