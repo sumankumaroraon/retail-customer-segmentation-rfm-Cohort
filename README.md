@@ -1,5 +1,7 @@
 # Retail Revenue Concentration: RFM Segmentation Meets Cohort Retention
 
+📄 **[Read the full report (PDF)](outputs/docs/Customer_Segmentation_Retention_Report.pdf)** — includes strategic recommendations and business impact estimates
+
 ## Overview
 End-to-end customer analytics pipeline on the Online Retail II dataset, covering data ingestion, cleaning, revenue analytics, RFM segmentation, cohort retention, and a cross-analysis connecting customer segments to purchase behavior over time.
 
@@ -18,13 +20,13 @@ The pipeline runs as a single script (`customer_segmentation_analysis.py`), stru
 6. **RFM × Cohort Cross-Analysis** — tenure and order frequency by segment
 
 ## Key Findings
-- **Total Revenue:** £17,743,429 across 36,975 invoices (Dec 2009 – Dec 2011)
+- **Total Revenue:** £17,743,429 across 36,975 invoices, 5,881 customers, 41 countries (Dec 2009 – Dec 2011)
 - **UK dominance:** £14.7M (83% of revenue); top international market is the Netherlands
-- **Champions segment:** 25% of customers drive 69% of revenue
-- **Pareto effect:** top revenue quintile accounts for 77.3% of total revenue
-- **Cohort retention:** steep drop to ~21% by Month 1, then a stable floor of 15–22%
-- **Seasonal pulse:** a retention bump around Month 11–12, consistent with repeat holiday purchasing
-- **At Risk insight:** longest average tenure (20.0 months) of any segment, but only 4.9 orders — a strong win-back candidate
+- **Champions segment:** 25.2% of customers (1,482) drive 69.3% of revenue (£12.3M)
+- **Pareto effect:** top 20% of customers by monetary value generate 77.3% of total revenue
+- **Month-1 retention crisis:** 78.8% of first-time buyers churn within 30 days — the single largest leakage point
+- **Cohort retention:** stabilizes around 18-22% after month 1, gradually declining to 15-18% by month 24
+- **At Risk insight:** longest average tenure (20.0 months) of any segment, but only 4.9 orders — a recoverable, zero-acquisition-cost win-back opportunity
 - **Frequency vs. tenure:** Champions and At Risk have nearly identical tenure (18.7 vs. 20.0 months); order frequency (15.7 vs. 4.9) is the real differentiator — this is a habit-formation gap, not a new-customer problem
 
 ## Tech Stack
@@ -34,8 +36,15 @@ The pipeline runs as a single script (`customer_segmentation_analysis.py`), stru
 ## Repository Structure
 ```
 ├── customer_segmentation_analysis.py   # full pipeline, single script
-├── outputs/figures/                    # generated charts
-├── requirements.txt
+├── outputs/
+│   ├── figures/                        # generated charts
+│   │   ├── revenue_by_country.png
+│   │   ├── monthly_revenue_trend.png
+│   │   ├── rfm_segment_revenue.png
+│   │   ├── cohort_retention_heatmap.png
+│   │   └── tenure_frequency_by_segment.png
+│   └── docs/
+│       └── Customer_Segmentation_Retention_Report.pdf
 └── README.md
 ```
 
